@@ -1,16 +1,11 @@
-const CACHE =
-  'lokyx-v3-shell';
-
 const BASE =
-  new URL(
-    './',
-    self.registration.scope,
-  ).pathname;
+  new URL('./', self.registration.scope).pathname;
 
-const SHELL = [
+const CACHE_NAME = 'lokyx-v1';
+
+const ASSETS = [
   BASE,
   `${BASE}index.html`,
-  `${BASE}manifest.webmanifest`,
 ];
 
 self.addEventListener(
@@ -18,15 +13,14 @@ self.addEventListener(
   (event) => {
     event.waitUntil(
       caches
-        .open(CACHE)
+        .open(CACHE_NAME)
         .then((cache) =>
-          cache.addAll(SHELL),
+          cache.addAll(ASSETS)
         )
-        .then(() =>
-          self.skipWaiting(),
-        ),
     );
-  },
+
+    self.skipWaiting();
+  }
 );
 
 self.addEventListener(
@@ -40,28 +34,24 @@ self.addEventListener(
             keys
               .filter(
                 (key) =>
-                  key !== CACHE,
+                  key !== CACHE_NAME
               )
               .map((key) =>
-                caches.delete(
-                  key,
-                ),
-              ),
-          ),
+                caches.delete(key)
+              )
+          )
         )
-        .then(() =>
-          self.clients.claim(),
-        ),
     );
-  },
+
+    self.clients.claim();
+  }
 );
 
 self.addEventListener(
   'fetch',
   (event) => {
     if (
-      event.request.method !==
-      'GET'
+      event.request.method !== 'GET'
     ) {
       return;
     }
@@ -73,27 +63,21 @@ self.addEventListener(
             response.clone();
 
           caches
-            .open(CACHE)
-            .then((cache) =>
+            .open(CACHE_NAME)
+            .then((cache) => {
               cache.put(
                 event.request,
-                copy,
-              ),
-            );
+                copy
+              );
+            });
 
           return response;
         })
         .catch(() =>
-          caches
-            .match(event.request)
-            .then(
-              (cached) =>
-                cached ||
-                caches.match(
-                  `${BASE}index.html`,
-                ),
-            ),
-        ),
+          caches.match(
+            event.request
+          )
+        )
     );
-  },
+  }
 );

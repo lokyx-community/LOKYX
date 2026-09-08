@@ -1,25 +1,24 @@
 {
-  "name": "LOKYX — Own Your World",
+  "name": "LOKYX",
   "short_name": "LOKYX",
-  "description": "A pixel-art social world built around identity, exploration, and connection.",
+  "description": "A pixel-art social world built around identity, exploration and connection.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#05050b",
-  "theme_color": "#05050b",
-  "orientation": "portrait-primary",
+  "background_color": "#05040d",
+  "theme_color": "#09071a",
   "icons": [
     {
-      "src": "./icons/icon-192.png",
+      "src": "./assets/gateway-portal.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "./icons/icon-512.png",
+      "src": "./assets/gateway-portal.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
