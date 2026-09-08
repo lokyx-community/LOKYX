@@ -1,14 +1,25 @@
 {
   "name": "LOKYX — Own Your World",
   "short_name": "LOKYX",
-  "description": "A cinematic Web3 social universe.",
-  "start_url": "/",
+  "description": "A pixel-art social world built around identity, exploration, and connection.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#05050b",
   "theme_color": "#05050b",
   "orientation": "portrait-primary",
   "icons": [
-    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
