@@ -1,0 +1,24 @@
+LOKYX — GATEWAY ASSET INTEGRATION
+
+Your three supplied artworks are already integrated:
+  public/assets/gateway-background.png
+  public/assets/gateway-background.webp
+  public/assets/gateway-portal.png
+  public/assets/traveler.png
+
+The Gateway now uses the real artwork instead of the old CSS-drawn city/portal/character placeholders.
+
+RUN:
+  1. Open this folder in VS Code.
+  2. Open Terminal > New Terminal.
+  3. Run: npm install
+  4. Run: npm run dev
+  5. Open the Local URL Vite prints (normally http://localhost:5173/).
+
+IMPORTANT:
+- Do not delete the public/assets folder.
+- You do NOT need the old gateway-sky/city/fog assets for the new Gateway.
+- The other LOKYX pages remain in the project.
+- The Gateway has responsive desktop/mobile layouts, parallax, portal glow/particles, character animation, modal navigation, trailer, and Enter transition.
+
+If npm install is slow, let it finish before running npm run dev.
