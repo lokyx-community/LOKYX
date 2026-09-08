@@ -1,97 +1,117 @@
-# LOKYX — Neon Awakening
+# LOKYX
 
-LOKYX is a cinematic pixel-art Web3 social universe MVP: Travelers enter through a Portal, awaken a Character, receive a Realm, emit Signals, explore Districts, use Whispers, play Arcade Runs, collect Relics and interact with a Companion.
+A pixel-art social world built around identity, exploration, and connection.
 
-## What changed in this build
+LOKYX is an experimental project that mixes social features, game-like exploration, digital identity, AI, and Web3 into one world.
 
-- Full-screen cinematic Gateway inspired by the supplied LOKYX visual target.
-- High-resolution pixel-art direction with Press Start 2P / Silkscreen typography.
-- Layered sky, fog, city, water, portal, character and HUD instead of a flat dashboard hero.
-- Mouse parallax, portal pulse, stars, water movement, scanlines and subtle glitch motion.
-- Functional ENTER LOKYX cinematic transition.
-- Functional trailer / Features / Token / Roadmap / Docs overlays.
-- Functional sound preference persistence.
-- Functional Pulse, Traverse, Realms, Districts, Nexuses, Whispers, Notifications, Arcade, Bazaar, Vault, Character, Identity, Core and Companion screens.
-- Demo interactions: Whisper sending, arcade score, item acquisition, character randomization/save, ID copy, Core sync.
-- React/Vite configuration repaired: `vite.config.ts`, `tsconfig.json`, `tsconfig.node.json`, automatic JSX transform.
-- Asset slots are wired to `/public/assets` so generated art can be dropped in without changing component code.
+The idea is simple:
 
-## Install
+**Enter. Create your identity. Explore. Meet people. Build your world.**
 
-```bash
-npm install
-npm run dev
-```
+---
 
-Production build:
+## The idea
 
-```bash
-npm run build
-npm run preview
-```
+Most social apps are built around feeds, profiles, likes, and endless scrolling.
 
-## Asset slots
+LOKYX takes a different approach.
 
-Put generated assets in `public/assets/` using the names below. Missing images automatically fall back to CSS atmosphere, so the app still boots.
+Instead of opening another dashboard, you enter a world.
+
+You become a **Traveler**.
+
+You get an **Identity**, a **Realm**, a **Character**, and eventually a **Companion**.
+
+From there you can explore different parts of LOKYX, interact with other Travelers, collect things, play Arcade Runs, and discover what is happening around the world.
+
+It is still early, but this repository contains the first working version of that idea.
+
+---
+
+## What's inside
 
 ### Gateway
 
-- `gateway-sky.webp`
-- `gateway-city-back.webp`
-- `gateway-city-mid.webp`
-- `gateway-fog.webp`
+The starting point of LOKYX.
 
-### World cards
+A cinematic city, a portal, and a Traveler waiting to enter.
 
-- `astral-harbor.webp`
-- `neon-city.webp`
-- `arcade.webp`
-- `relic-epic.webp`
+### Identity
 
-### Character / future animation
+The identity system is designed to be the starting point for everything else.
 
-- `traveler-idle.png`
-- `character-idle.png`
-- `character-walk.png`
-- `character-run.png`
-- `character-wave.png`
-- `character-dance.png`
-- `character-sit.png`
-- `companion.png`
+Current prototype features include:
 
-## Demo Mode
+- LOKYX ID
+- Local embedded wallet creation
+- 12-word recovery phrase
+- Local passcode protection
+- Recovery flow
+- Wallet address display
 
-The MVP deliberately works without Supabase, an AI key or a live wallet connection. UI state is local/demo state and can later be replaced with real service adapters.
+There is no MetaMask requirement for entering LOKYX.
 
-No real private keys, seed phrases or credentials are stored by this demo.
+### Realm
 
-## Production architecture
+Your personal place inside the LOKYX universe.
 
-The intended production stack is:
+This is where the personal side of the product will eventually live.
 
-- React + Vite frontend
-- Base / EVM for ownership where useful
-- Supabase/Postgres + Realtime for off-chain social activity
-- Secure wallet/key-management layer
-- Server-side AI Companion integration
-- Shared service contracts for web + mobile
+### Pulse
 
-Do not place server secrets in `VITE_` environment variables.
+The social activity layer.
 
-## GitHub
+Signals, reactions, events, and activity come together here.
 
-```bash
-git init
-git add .
-git commit -m "Build LOKYX Neon Awakening MVP"
-git branch -M main
-git remote add origin YOUR_REPOSITORY_URL
-git push -u origin main
-```
+### Traverse
 
-## Important
+The exploration side of LOKYX.
 
-The visual target depends heavily on the generated pixel-art assets. Keep those assets crisp, high-resolution and separated by layer. Do not flatten the gateway into one screenshot; the code intentionally keeps sky, fog, city, water, portal and character as independent layers so they can animate separately.
+Discover districts, locations, and different parts of the world.
 
-## Embedded Identity V1
-The latest build uses an embedded self-custody wallet flow instead of external wallet connection. Users can create a wallet in-browser, receive a standard 12-word recovery phrase, unlock on the same device with a local passcode, or restore on another device using the phrase. See `EMBEDDED-IDENTITY-V1.md`.
+### Whispers
+
+Private conversations between Travelers.
+
+### Companion
+
+An AI character that exists inside the LOKYX experience instead of being treated as a separate chatbot.
+
+### Bazaar
+
+The place for discovering digital items and other things that can eventually become part of the LOKYX economy.
+
+### Vault
+
+Your collection and inventory.
+
+### Arcade
+
+Small game-like experiences and progression systems.
+
+### Core
+
+The technical side of your identity, wallet, and LOKYX setup.
+
+---
+
+## LOKYX language
+
+LOKYX has its own terminology, but the goal isn't to make the interface confusing.
+
+| Common term | LOKYX |
+|---|---|
+| User | Traveler |
+| Profile | Identity |
+| Home | Realm |
+| Post | Signal |
+| Feed | Pulse |
+| Like | Resonate |
+| Comment | Echo |
+| Follow | Enter Orbit |
+| Explore | Traverse |
+| Message | Whisper |
+| Community | Nexus |
+| Notification | Pulse |
+| XP | Essence |
+| Achievement
